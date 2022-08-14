@@ -1,0 +1,149 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.App {
+  text-align: center;
+  /* position: relative; */
+  padding: 0;
+  
+}
+
+body{
+  padding: 0;
+}
+
+.app{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.sidebar{
+  border: 1px solid red;
+  height: 100vh;
+  width: 15%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  padding: 1rem;
+}
+
+.side-item{
+  border: 1px solid black;
+  margin-bottom: 1rem;
+  padding: 0.3rem;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.main{
+  position: relative;
+}
+
+.nav-buttons{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateY(50%,50%);
+  transform: translateX(-50%);
+  width: 600px;
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: space-between;
+  /* flex-direction: column; */
+}
+
+.prev-button{
+  margin-right: auto;
+  background-image: url('./assets/left-arrow.png');
+  background-size: 50px;
+  /* border: 1px solid red; */
+  border: none;
+  background-color: none;
+  width: 50px;
+  height: 50px;
+  color: #333;
+  border-radius: 25px;
+}
+
+.next-button{
+  background-image: url('./assets/arrow-right.png');
+  background-size: 50px;
+  border: 1px solid red;
+  border: none;
+  background-color: none;
+  width: 50px;
+  height: 50px;
+  color: rgb(172, 168, 168);
+  border-radius: 25px;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  /* height: 100vh; */
+  overflow:scroll;
+  font-family: Helvetica, sans-serif;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container{
+  height: 300px;
+  width: 500px;
+  margin-top: 2rem;
+  perspective: 500px;
+}
+
+.card{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 2000ms;
+  transform-style: preserve-3d;
+  border-radius: 10px;
+  /* border: 1px solid black; */
+
+}
+
+.container:hover > .card{
+  cursor: pointer;
+}
+
+.question,
+.answer{
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  
+}
+
+.question{
+  background-color: rgb(214, 211, 211);
+  align-items:center;
+  justify-content: center;
+  display: flex;
+  text-align: center;
+}
+.answer{
+  background-color: rgb(225, 164, 250);
+  transform: rotateX(180deg);
+  align-items:center;
+  justify-content: center;
+  display: flex;
+  text-align: center;
+  font-weight: 600;
+  padding: 0 2rem;
+}
